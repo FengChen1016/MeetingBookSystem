@@ -1,0 +1,11 @@
+1. extract MeetingBook.zip
+
+2. (optional) run ant build against build file: MeetingBook/build.xml
+
+2. change working directory to MeetingBook/bin
+
+3. issue the following command to run program and view output in console:
+
+java com.meetingbook.MeetingBatchBook
+
+4.(Optional) you can modify input.txt to change input meeting book requests and run it again

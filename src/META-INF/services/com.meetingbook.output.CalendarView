@@ -1,0 +1,5 @@
+# Note: only one CalendarView implementation will be used
+# simple sorted calendar view that output to console
+com.meetingbook.output.SimpleConsoleSortedView
+# TODO report view to produce a meeting book report
+# com.meetingbook.output.SimpleReportView

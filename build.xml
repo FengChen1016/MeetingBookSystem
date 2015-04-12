@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." default="build" name="MeetingBook">
+	<description>
+		Meeting Book System ant build file
+	</description>
+	
+	<tstamp>
+		<format property="DATETIME" pattern="yyyyMMddHHmm"/>
+	</tstamp>
+	
+	<property name="java-src" value="src"/>
+	<property name="class-dir" value="bin"/>
+
+	<presetdef name="javac">
+		<javac includeantruntime="false"/>
+	</presetdef>
+	
+    <target name="clean">
+        <delete dir="${target.dir}"/>
+    </target>
+	
+	<target name="build" depends="clean" description="compile and build">
+		<antcall target="compile"/>
+		
+		<echo>Build finished!</echo>
+	</target>
+	
+	<target name="compile">
+		<echo message="Start compling java source code..." level="info" />
+		<mkdir dir="${class-dir}"/>
+		<copy todir="${class-dir}">  
+			<fileset dir="${java-src}" excludes="**/*.java"/>  
+		</copy>
+		<javac srcdir="${java-src}" destdir="${class-dir}" debug="on" target="1.7">
+			<!-- <classpath>
+				<fileset dir="WebContent/WEB-INF/lib">
+					<include name="*.jar"/>
+				</fileset>
+			</classpath> -->
+			<!-- <compilerarg value="-Xlint"/> -->  <!-- enable to see compile warning -->
+		</javac>
+	</target>
+
+</project>
